@@ -1,0 +1,204 @@
+@page "/Classroom"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Classroom Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f3f4;
+    }
+
+    #navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar-icon {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .navbar-text .title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #3c4043;
+    }
+
+    .sidebar {
+      background-color: white;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      height: 100vh;
+    }
+
+    .sidebar button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: none;
+      font-size: 16px;
+      color: #5f6368;
+      transition: 0.2s;
+    }
+
+    .sidebar button:hover {
+      background-color: #e8f0fe;
+      border-radius: 10px;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .class-card {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      color: white;
+      position: relative;
+    }
+
+    .class-header {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .class-footer {
+      font-size: 14px;
+    }
+
+    .card-options {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .profile-icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="navbar">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container navbar-container">
+        <div class="navbar-left">
+          <a class="navbar-brand d-flex align-items-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNEBO2OUKQjP-RSbIZae3jIq76g3rMrn9vQ&s" alt="Menu" width="30" height="24" class="navbar-icon" />
+            <img src="https://img.utdstc.com/icon/840/346/84034618660d96a3b1fe1ec19bed64f45bf926f3c1c9edfdf8ee40da225dd01f:200" alt="Google Classroom" width="30" height="36" class="navbar-icon" />
+            <div class="navbar-text"><span class="title">Classroom</span></div>
+          </a>
+        </div>
+
+        <div class="navbar-right d-flex align-items-center">
+          <img src="https://w7.pngwing.com/pngs/730/99/png-transparent-mathematics-mathematical-notation-division-equals-sign-plus-and-minus-signs-plus-cross-sign-multiplication-thumbnail.png" alt="Add" width="20" height="20" class="navbar-icon" />
+          <img src="https://w7.pngwing.com/pngs/1011/898/png-transparent-dots-menu-hamburger-button-computer-icons-free-creative-material-food-text-rectangle.png" alt="Menu" width="20" height="20" class="navbar-icon" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9lRck6miglY0SZF_BZ_sK829yiNskgYRUg&s" alt="User" width="30" height="30" class="rounded-circle" />
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-4 sidebar">
+        <h4>Classroom</h4>
+        <button><span class="material-symbols-outlined">home</span>&nbsp; Home</button>
+        <button><span class="material-symbols-outlined">calendar_today</span>&nbsp; Calendar</button>
+        <button><span class="material-symbols-outlined">school</span>&nbsp; Enrolled</button>
+        <button><span class="material-symbols-outlined">fact_check</span>&nbsp; To-do</button>
+        <button><span class="material-symbols-outlined">archive</span>&nbsp; Archived Classes</button>
+        <button><span class="material-symbols-outlined">settings</span>&nbsp; Settings</button>
+      </div>
+
+      <div class="col-12 col-md-8 content">
+        <div class="container mt-4">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="class-card bg-dark">
+                <div class="card-options"><i class="fas fa-ellipsis-v"></i></div>
+                <div class="class-header">Computer Networks</div>
+                <div class="class-footer">Muhammad Yasir Ali</div>
+                <div class="profile-icon">M</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="class-card bg-success">
+                <div class="card-options"><i class="fas fa-ellipsis-v"></i></div>
+                <div class="class-header">BSCS-4B (Evening)</div>
+                <div class="class-footer">Dr. Imtiaz Khan</div>
+                <div class="profile-icon">D</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="class-card bg-danger">
+                <div class="card-options"><i class="fas fa-ellipsis-v"></i></div>
+                <div class="class-header">HU-411-BSCSev-IV</div>
+                <div class="class-footer">Aiman Nisar</div>
+                <div class="profile-icon">A</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="class-card bg-primary">
+                <div class="card-options"><i class="fas fa-ellipsis-v"></i></div>
+                <div class="class-header">Software Engineering</div>
+                <div class="class-footer">Bilal Khan</div>
+                <div class="profile-icon">B</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="class-card" style="background-color: purple;">
+                <div class="card-options"><i class="fas fa-ellipsis-v"></i></div>
+                <div class="class-header">Visual Programming</div>
+                <div class="class-footer">Tauqeer Sajid</div>
+                <div class="profile-icon">T</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
